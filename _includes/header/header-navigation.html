@@ -6,6 +6,11 @@ tutte le pagine del sito che:
 {% endcomment %}
 
 {% assign current_lang_menu_pages = site.pages | where: "lang", page.lang | where_exp: "page", "page.order != nil" | sort: "order" %}
+<style>
+  .it-header-slim-wrapper {
+  background-color: #004080; /* blu scuro come esempio */
+}
+</style>
 <div class="it-nav-wrapper theme-light">
   <div class="it-header-center-wrapper theme-light">
     <div class="container">
