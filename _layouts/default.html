@@ -152,25 +152,104 @@ https://cdn.jsdelivr.net/npm/bootstrap-italia@2.16.0/dist/css/bootstrap-italia.m
   </div>
 </div>
 </header>    
-	
-	
-	
-
-    
-	
-	
-	
-
-    
-	
-	
-	
-
-    
-	
-	
-	
 
       {{ content }}
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // ====== NAVBAR COLLAPSABLE ======
+  const toggler = document.querySelector('[data-bs-toggle="navbarcollapsible"]');
+  const targetSel = toggler?.getAttribute('data-bs-target');
+  const collapsable = targetSel ? document.querySelector(targetSel) : null;
+  const closeBtn = collapsable?.querySelector('.close-menu');
+
+  const openMenu = () => {
+    if (!collapsable) return;
+    collapsable.classList.add('show');
+    toggler?.setAttribute('aria-expanded', 'true');
+    collapsable.focus();
+  };
+
+  const closeMenu = () => {
+    if (!collapsable) return;
+    collapsable.classList.remove('show');
+    toggler?.setAttribute('aria-expanded', 'false');
+    toggler?.focus();
+  };
+
+  toggler?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const isOpen = collapsable?.classList.contains('show');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  closeBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    closeMenu();
+  });
+
+  // Chiudi con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // Chiudi il menu dopo il click su un link (utile su mobile)
+  collapsable?.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      // se il toggler è visibile, considera la navbar "collassata"
+      const togglerVisible = window.getComputedStyle(toggler).display !== 'none';
+      if (togglerVisible) closeMenu();
+    });
+  });
+
+  // Resetta stato su resize ≥ lg (992px)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992) {
+      collapsable?.classList.remove('show');
+      toggler?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // ====== SINGLE DROPDOWN (su #dropdownMenuLink) ======
+  const ddToggle = document.getElementById('dropdownMenuLink'); // il tuo <a class="nav-link dropdown-toggle" ...>
+  const ddMenu = ddToggle ? ddToggle.parentElement.querySelector('.dropdown-menu') : null;
+
+  const closeAllDropdowns = () => {
+    document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
+      const t = menu.parentElement.querySelector('.dropdown-toggle');
+      t?.setAttribute('aria-expanded', 'false');
+      menu.classList.remove('show');
+    });
+  };
+
+  ddToggle?.setAttribute('aria-expanded', 'false');
+
+  ddToggle?.addEventListener('click', (e) => {
+    e.preventDefault();
+    const expanded = ddToggle.getAttribute('aria-expanded') === 'true';
+    closeAllDropdowns();
+    if (!expanded) {
+      ddToggle.setAttribute('aria-expanded', 'true');
+      ddMenu?.classList.add('show');
+      // Focalizza il primo elemento del menu, se presente
+      const firstItem = ddMenu?.querySelector('a, button');
+      firstItem && firstItem.focus();
+    }
+  });
+
+  // Chiude dropdown cliccando fuori
+  document.addEventListener('click', (e) => {
+    if (!ddMenu || !ddToggle) return;
+    const clickInside = ddMenu.contains(e.target) || ddToggle.contains(e.target);
+    if (!clickInside) closeAllDropdowns();
+  });
+
+  // Chiude dropdown con ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAllDropdowns();
+  });
+});
+</script>
+
 </body>
 </html>
