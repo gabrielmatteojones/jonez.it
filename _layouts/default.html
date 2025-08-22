@@ -18,8 +18,164 @@
 {{ site.url | append: site.data.t.social-card }}
 {%- endif -%}
 {%- endcapture -%}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  <link href="
+    https://cdn.jsdelivr.net/npm/bootstrap-italia@2.16.0/dist/css/bootstrap-italia.min.css
+" rel="stylesheet">
+
+  <!-- USWDS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/uswds@2.14.0/dist/css/uswds.min.css" rel="stylesheet" />
+  
+  <style>
+    body {
+      font-family: "Source Sans Pro", Arial, sans-serif;
+      background-color: #f9fafb;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #212121;
+    }
+    main {
+      flex-grow: 1;
+      padding: 2rem 1rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    footer {
+      background-color: #002a5c;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      margin-top: auto;
+      box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.1);
+    }
+    
+    /* Navbar logo + text affiancati */
+    .usa-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      position: relative;
+    }
+    .usa-logo__link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .usa-logo__link img {
+      height: 48px;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+      transition: transform 0.3s ease;
+    }
+    .usa-logo__link:hover img,
+    .usa-logo__link:focus img {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.25);
+    }
+    
+    /* Titolo semplice desktop */
+    .usa-logo__title-static {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #002a5c;
+      white-space: nowrap;
+      cursor: default;
+      border: none;
+      background: none;
+      padding: 0;
+      user-select: none;
+      display: inline-block;
+    }
+    
+    /* Titolo bottone mobile (hidden desktop) */
+    .usa-logo__title-button {
+      display: none;
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #002a5c;
+      white-space: nowrap;
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      user-select: none;
+      position: relative;
+    }
+    
+    /* Dropdown menu mobile */
+    .dropdown-menu-mobile {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border: 1px solid #d1d5db;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+      border-radius: 4px;
+      min-width: 160px;
+      margin-top: 0.25rem;
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+    }
+    .dropdown-menu-mobile.show {
+      display: flex;
+    }
+    .dropdown-menu-mobile a {
+      padding: 0.5rem 1rem;
+      color: #002a5c;
+      text-decoration: none;
+      font-weight: 600;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .dropdown-menu-mobile a:last-child {
+      border-bottom: none;
+    }
+    .dropdown-menu-mobile a:hover,
+    .dropdown-menu-mobile a:focus {
+      background-color: #f0f9ff;
+      outline: none;
+    }
+    
+    /* Nascondi titolo bottone mobile da desktop */
+    @media (max-width: 767px) {
+      .usa-logo__title-static {
+        display: none;
+      }
+      .usa-logo__title-button {
+        display: inline-block;
+      }
+    }
+    
+    /* Navbar active link style */
+    .usa-nav__link[aria-current="page"] {
+      font-weight: 600;
+      border-bottom: 3px solid #005ea2;
+      color: #005ea2;
+    }
+    
+    /* Table styling */
+    .usa-table--striped tbody tr:nth-child(odd) {
+      background-color: #f2f4f7;
+    }
+    
+    /* Hero image full width */
+    .hero-image {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgb(0 0 0 / 0.12);
+    }
+    
+    /* Search form spacing */
+    nav form {
+      margin-top: 1rem;
+    }
+  </style>
 
   <style>
     /* 🔧 Disattiva l'overlay scuro del menu mobile */
@@ -162,221 +318,87 @@ https://cdn.jsdelivr.net/npm/bootstrap-italia@2.16.0/dist/css/bootstrap-italia.m
 	
 </head>
 <body>
-<header class="it-header-wrapper theme-light">
-  <!-- Header slim -->
-  <div class="it-header-slim-wrapper theme-light">
-    <div class="container-xxl">
-      <div class="row">
-        <div class="col-12">
-          <div class="it-header-slim-wrapper-content">
-            <div class="nav-mobile">
-              <nav aria-label="Navigazione secondaria">
-                <a class="it-opener d-lg-none" data-bs-toggle="collapse" href="#menuC1" role="button" aria-expanded="false" aria-controls="menuC1">
-                  <span>Jonez Site</span>
-                  <svg class="icon" aria-hidden="true"><use href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.7.2/dist/svg/sprites.svg#it-expand"></use></svg>
-                </a>
-                <div class="link-list-wrapper collapse" id="menuC1">
-                  <ul class="link-list">
-                    <li><a class="dropdown-item list-item" href="/aree-tematiche/">Aree Tematiche</a></li>
-                    <li><a class="dropdown-item list-item" href="/infanzia/">Infanzia</a></li>
-                  </ul>
-                </div>
-              </nav>
-            </div>
-            <div class="it-header-slim-right-zone">
-              <div class="it-access-top-wrapper">
-                <a href="#" class="btn btn-primary btn-icon btn-full">
-                  <span class="rounded-icon">
-                    <svg class="icon icon-primary">
-                      <use href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.7.2/dist/svg/sprites.svg#it-user"></use>
-                    </svg>
-                  </span>
-                  <span class="d-none d-lg-block">Accesso</span>
-                </a>
-              </div>
-            </div>
-          </div>
+	  <header class="usa-header usa-header--basic" role="banner">
+    <div class="usa-nav-container">
+      <div class="usa-navbar">
+        <div class="usa-logo" id="basic-logo">
+          <a href="/" class="usa-logo__link" title="Homepage" aria-label="Homepage">
+            <img src="https://gabrieljones.it/assets/logo.png" alt="Logo" />
+          <!-- Titolo semplice desktop -->
+          <span class="usa-logo__title-static">Ufficio Digitale di Gabriel Jones</span>
+          <!-- Titolo bottone mobile -->
+          <button id="titleMobileBtn" class="usa-logo__title-button" aria-haspopup="true" aria-expanded="false" aria-controls="titleMobileMenu">
+            Ufficio Digitale di Gabriel Jones
+          </button>
+          </a>
         </div>
+        <button class="usa-menu-btn" aria-expanded="false" aria-controls="basic-mobile-menu">Menu</button>
       </div>
+
+<nav id="basic-mobile-menu" class="usa-nav" role="navigation" aria-label="Primary navigation">
+  <ul class="usa-nav__primary usa-accordion">
+<!--    <li class="usa-nav__primary-item">
+      <a href="#" class="usa-nav__link" aria-current="page">Home</a>
+    </li>
+-->
+    <!-- Dropdown 1 -->
+    <li class="usa-nav__primary-item">
+      <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-submenu-1">
+        <span>Biblioteconomia e Affari Istituzionali</span>
+      </button>
+      <ul id="nav-submenu-1" class="usa-nav__submenu">
+        <li class="usa-nav__submenu-item"><a href="/aree/1/" class="usa-nav__link">Panoramica</a></li>
+        <li class="usa-nav__submenu-item"><a href="/aree/1/progetti/" class="usa-nav__link">Progetti</a></li>
+        <li class="usa-nav__submenu-item"><a href="/aree/1/documenti/" class="usa-nav__link">Documenti</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown 2 -->
+    <li class="usa-nav__primary-item">
+      <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-submenu-2">
+        <span>Formazione e Istruzione</span>
+      </button>
+      <ul id="nav-submenu-2" class="usa-nav__submenu">
+        <li class="usa-nav__submenu-item"><a href="/fi25/" class="usa-nav__link">Panoramica</a></li>
+        <li class="usa-nav__submenu-item"><a href="https://udgj.it/fi25/oratorio/" class="usa-nav__link">Oratorio 2025</a></li>
+        <li class="usa-nav__submenu-item"><a href="https://udgj.it/fi25/mangialibri/" class="usa-nav__link">Mangia Libri</a></li>
+      </ul>
+    </li>
+
+    <!-- Dropdown 3 -->
+    <li class="usa-nav__primary-item">
+      <button class="usa-accordion__button usa-nav__link" aria-expanded="false" aria-controls="nav-submenu-3">
+        <span>Progetti</span>
+      </button>
+      <ul id="nav-submenu-3" class="usa-nav__submenu">
+        <li class="usa-nav__submenu-item"><a href="/progetti/" class="usa-nav__link">Progetti</a></li>
+        <li class="usa-nav__submenu-item"><a href="/progetti/aes/" class="usa-nav__link">Autori e Scrittori</a></li>
+        <li class="usa-nav__submenu-item"><a href="/progetti/AGFO/" class="usa-nav__link">AGFO</a></li>
+        <li class="usa-nav__submenu-item"><a href="/progetti/UPID/" class="usa-nav__link">UPID</a></li>
+        <li class="usa-nav__submenu-item"><a href="/progetti/accentocivico/" class="usa-nav__link">Progetti</a></li>
+        <li class="usa-nav__submenu-item"><a href="/progetti/ex/" class="usa-nav__link">Chiusi</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
-  </div>
+  </header>
 
-  <!-- Header centro con logo -->
-  <div class="it-nav-wrapper">
-    <div class="it-header-center-wrapper theme-light">
-      <div class="container-xxl">
-        <div class="row">
-          <div class="col-12">
-            <div class="it-header-center-content-wrapper">
-              <div class="it-brand-wrapper">
-                <a href="#">
-                  <img src="https://gabrieljones.it/assets/logo.png" alt="Logo" class="icon icon-sm me-2">
-                  <div class="it-brand-text">
-                    <div class="it-brand-platform"><strong>Jonez</strong></div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>  
-  </div>
-
-  <!-- Navbar -->
-  <div class="it-header-navbar-wrapper theme-light">
-    <div class="container-xxl">
-      <div class="row">
-        <div class="col-12">
-          <nav class="navbar navbar-expand-lg has-megamenu" aria-label="Navigazione principale">
-            <!-- Hamburger toggler -->
-            <button class="custom-navbar-toggler" type="button" data-bs-toggle="navbarcollapsible" data-bs-target="#nav4" aria-controls="nav4" aria-expanded="false" aria-label="Mostra/Nascondi la navigazione">
-              <svg class="icon bg-override"><use href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.7.2/dist/svg/sprites.svg#it-burger"></use></svg>
-            </button>
-
-            <!-- Menu contenuto -->
-            <div class="navbar-collapsable" id="nav4" tabindex="-1">
-              <div class="close-div">
-                <button class="btn close-menu" type="button">
-                  <span class="visually-hidden">Chiudi menu</span>
-                  <svg class="icon"><use href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.7.2/dist/svg/sprites.svg#it-close-big"></use></svg>
-                </button>
-              </div>
-              <div class="menu-wrapper theme-light">
-                <ul class="navbar-nav">
-                  <li class="nav-item"><a class="nav-link" href="/"><span>Home</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="/news/"><span>News</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="/comunicazioni/"><span>Comunicazioni</span></a></li>
-
-                  <!-- Dropdown -->
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <span>Infanzia</span>
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                      <li><a class="dropdown-item" href="/infanzia/">Panoramica</a></li>
-                      <li><a class="dropdown-item" href="/infanzia/babysitting/">Babysitting</a></li>
-                      <li><a class="dropdown-item" href="/infanzia/ripetizioni/">Ripetizioni</a></li>
-                      <li><a class="dropdown-item" href="/infanzia/oratorio/">Oratorio</a></li>
-                      <li><a class="dropdown-item" href="/infanzia/mangialibri/">Mangia Libri</a></li>
-                    </ul>
-                  </li>
-                </ul>
-
-                <!-- Secondaria -->
-                <ul class="navbar-nav navbar-secondary">
-                  <li class="nav-item"><a class="nav-link" href="/press/"><span>Press</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="/archivio/"><span>Archivio</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="/project/"><span>Progetti</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="/legal/"><span>Legal</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="/aree/"><span>Pagine in evidenza</span></a></li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </div>
+  <section aria-label="...">
+    <div class="">
+      <br />
+      <br />
+<img
+  src="{{ page.image | default: 'https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/1509/2164680/1000w_q95.jpg' }}"
+  alt="NA"
+  class="hero-image"
+/>
     </div>
-  </div>
-</header>
+  </section>
 
-      {{ content }}
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  // ====== NAVBAR COLLAPSABLE ======
-  const toggler = document.querySelector('[data-bs-toggle="navbarcollapsible"]');
-  const targetSel = toggler?.getAttribute('data-bs-target');
-  const collapsable = targetSel ? document.querySelector(targetSel) : null;
-  const closeBtn = collapsable?.querySelector('.close-menu');
-
-  const openMenu = () => {
-    if (!collapsable) return;
-    collapsable.classList.add('show');
-    toggler?.setAttribute('aria-expanded', 'true');
-    collapsable.focus();
-  };
-
-  const closeMenu = () => {
-    if (!collapsable) return;
-    collapsable.classList.remove('show');
-    toggler?.setAttribute('aria-expanded', 'false');
-    toggler?.focus();
-  };
-
-  toggler?.addEventListener('click', (e) => {
-    e.preventDefault();
-    const isOpen = collapsable?.classList.contains('show');
-    isOpen ? closeMenu() : openMenu();
-  });
-
-  closeBtn?.addEventListener('click', (e) => {
-    e.preventDefault();
-    closeMenu();
-  });
-
-  // Chiudi con ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenu();
-  });
-
-  // Chiudi il menu dopo il click su un link (utile su mobile)
-  collapsable?.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      // se il toggler è visibile, considera la navbar "collassata"
-      const togglerVisible = window.getComputedStyle(toggler).display !== 'none';
-      if (togglerVisible) closeMenu();
-    });
-  });
-
-  // Resetta stato su resize ≥ lg (992px)
-  window.addEventListener('resize', () => {
-    if (window.innerWidth >= 992) {
-      collapsable?.classList.remove('show');
-      toggler?.setAttribute('aria-expanded', 'false');
-    }
-  });
-
-  // ====== SINGLE DROPDOWN (su #dropdownMenuLink) ======
-  const ddToggle = document.getElementById('dropdownMenuLink'); // il tuo <a class="nav-link dropdown-toggle" ...>
-  const ddMenu = ddToggle ? ddToggle.parentElement.querySelector('.dropdown-menu') : null;
-
-  const closeAllDropdowns = () => {
-    document.querySelectorAll('.dropdown-menu.show').forEach(menu => {
-      const t = menu.parentElement.querySelector('.dropdown-toggle');
-      t?.setAttribute('aria-expanded', 'false');
-      menu.classList.remove('show');
-    });
-  };
-
-  ddToggle?.setAttribute('aria-expanded', 'false');
-
-  ddToggle?.addEventListener('click', (e) => {
-    e.preventDefault();
-    const expanded = ddToggle.getAttribute('aria-expanded') === 'true';
-    closeAllDropdowns();
-    if (!expanded) {
-      ddToggle.setAttribute('aria-expanded', 'true');
-      ddMenu?.classList.add('show');
-      // Focalizza il primo elemento del menu, se presente
-      const firstItem = ddMenu?.querySelector('a, button');
-      firstItem && firstItem.focus();
-    }
-  });
-
-  // Chiude dropdown cliccando fuori
-  document.addEventListener('click', (e) => {
-    if (!ddMenu || !ddToggle) return;
-    const clickInside = ddMenu.contains(e.target) || ddToggle.contains(e.target);
-    if (!clickInside) closeAllDropdowns();
-  });
-
-  // Chiude dropdown con ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeAllDropdowns();
-  });
-});
-</script>
+  <main class="usa-prose" role="main">
+    {{ content }}
+  </main>
 
 </body>
 </html>
