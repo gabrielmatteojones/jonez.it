@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Street Art Nerd – Educatore 17enne</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Street Art Nerd</h1>
+    <p>Educatore 17enne che mixa graffiti, coding e cultura nerd.</p>
+  </header>
+
+  <!-- Chi sono -->
+  <section id="about">
+    <h2>Chi sono</h2>
+    <p>Cresciuto tra fumetti, videogame e bombolette spray, condivido la mia passione con workshop e attività educative creative.</p>
+  </section>
+
+  <!-- Workshop = Post Jekyll -->
+  <section id="workshops">
+    <h2>Workshop</h2>
+    <ul>
+      {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+          <p>{{ post.excerpt }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+
+  <!-- Galleria = Aree Tematiche -->
+  <section id="galleria">
+    <h2>Aree Tematiche</h2>
+    <div class="grid">
+      {% for galleria in site.gallerie %}
+        <div class="card">
+          <h3><a href="{{ galleria.url }}">{{ galleria.title }}</a></h3>
+          <p>{{ galleria.description }}</p>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Contatti -->
+  <section id="contatti">
+    <h2>Contatti</h2>
+    <p>Scrivimi su <a href="mailto:ciao@streetartnerd.it">ciao@streetartnerd.it</a></p>
+  </section>
+</body>
+</html>
