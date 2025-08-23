@@ -2,16 +2,40 @@
 layout: default
 ---
 
-<article class="container my-4">
-  <h1>{{ page.title }}</h1>
+<article class="post max-w-3xl mx-auto py-12 prose dark:prose-invert">
+  {% if page.image %}
+    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full h-64 object-cover rounded-lg mb-6">
+  {% endif %}
 
-  <div class="entry">
+  <h1 class="text-4xl font-bold mb-2">{{ page.title }}</h1>
+  <p class="text-sm text-gray-500 mb-4">{{ page.date | date: "%d %B %Y" }}</p>
+
+  {% assign words = content | number_of_words %}
+  <p class="text-xs text-gray-400 mb-8">
+    {% if words < 180 %}
+      ~1 min
+    {% else %}
+      ~{{ words | divided_by: 180 }} min
+    {% endif %}
+    lettura
+  </p>
+
+  <div class="entry mb-8">
     {{ content }}
   </div>
 
-  <div class="date">
-    Scritto il {{ page.date | date: "%d/%m/%Y" }}
+  {% if page.tags %}
+  <div class="tags mb-8">
+    <strong>Tag:</strong>
+    {% for tag in page.tags %}
+      <a href="{{ '/tags/' | append: tag | relative_url }}" class="inline-block bg-gray-200 dark:bg-gray-700 rounded px-2 py-1 text-xs mr-2">{{ tag }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="entry mb-8">
+    <p>Articolo gestido da <a href="https://servizi.jonez.it/dipartimenti/18f/{{ page.author }}">{{ page.author }}</a></p>
   </div>
 
-  {% include disqus.html %}
+  {% include comments.html %}
 </article>
