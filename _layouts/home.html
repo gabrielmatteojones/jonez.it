@@ -1,173 +1,164 @@
----
-layout: default
----
-<!-- HERO -->
-      <section id="home" class="py-14 text-center fade-in">
-        <img class="mx-auto h-28 w-28 rounded-3xl ring-2 ring-zinc-200 object-cover" src="https://2.gravatar.com/avatar/53241b11fb23d653d6c97ab192be4c459ef4201d71bffe0b87f8c09c061c577b?size=2056&d=initials" alt="Avatar"/>
-        <h1 class="mt-5 text-4xl font-bold">Gabriel Jones</h1>
-        <p class="mt-2 text-zinc-600 dark:text-zinc-400">Web Developer di 17 anni • Bibliotecario, Grafico, Animatore e Politico</p>
-        <p class="mx-auto mt-3 max-w-2xl text-balance text-zinc-700 dark:text-zinc-300">
-          Sono un giovane ragazzo animatore di prima e seconda elementare, developer in html, css e js, bibliotecario e studente di grafica & comunicazione.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3 justify-center">
-          <a href="/cv/" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl bg-zinc-900 text-white shadow-soft dark:bg-zinc-100 dark:text-zinc-900">Vai al CV</a>
-          <a href="/#contact" class="inline-flex items-center gap-2 px-4 py-2 rounded-2xl border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800">✉️ Contattami</a>
-        </div>
-        <div class="mt-6 flex items-center justify-center gap-4 text-sm text-zinc-600 dark:text-zinc-400">
-          <span>📍 Italia</span><span>•</span><span>🗓️ 17 anni</span>
-        </div>
-        <div class="mt-6 flex justify-center gap-3">
-          <a class="inline-flex h-10 w-10 items-center justify-center rounded-2xl border hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" href="https://github.com/gabrielmatteojones" target="_blank" aria-label="GitHub">🐙</a>
-          <a class="inline-flex h-10 w-10 items-center justify-center rounded-2xl border hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" href="https://linkedin.com/in/gabrielmatteojones" target="_blank" aria-label="LinkedIn">💼</a>
-          <a class="inline-flex h-10 w-10 items-center justify-center rounded-2xl border hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" href="https://instagram.com/gabrielmatteojones_official" target="_blank" aria-label="Instagram">📷</a>
-        </div>
-      </section>
-
-      <hr class="border-zinc-200 dark:border-zinc-800" />
-
-      <!-- PROGETTI -->
-<section id="projects" class="scroll-mt-24 py-12">
-  <div class="mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <div>
-      <h2 class="text-2xl font-bold">Progetti</h2>
-      <p class="text-zinc-600 dark:text-zinc-400">Una selezione di lavori, esperimenti e idee.</p>
-    </div>
-    <input id="searchInput" type="search" placeholder="Cerca per titolo o tag…" class="w-full sm:w-80 px-3 py-2 rounded-xl border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900"/>
-  </div>
-
-  <div id="projectsGrid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-    {% for project in site.data.projects %}
-    <article class="project card rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800"
-             data-tags="{{ project.tags | join: ' ' }}"
-             data-title="{{ project.title }}">
-      <div class="h-40 bg-cover bg-center" style="background-image:url('{{ project.image }}')"></div>
-      <div class="p-4">
-        <div class="flex items-center justify-between gap-3">
-          <h3 class="font-semibold">
-            {{ project.title }}
-            {% if project.featured %}
-              <span class="ml-2 text-xs px-2 py-0.5 rounded-full bg-zinc-100 dark:bg-zinc-800">In evidenza</span>
-            {% endif %}
-          </h3>
-          <div class="flex items-center gap-2 text-zinc-500">
-            {% for link in project.links %}
-              <a href="{{ link.url }}" target="_blank" class="hover:underline" title="{{ link.label }}">{{ link.label }}</a>
-            {% endfor %}
-          </div>
-        </div>
-        <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{{ project.description }}</p>
-        <div class="mt-3 flex flex-wrap gap-2 text-xs">
-          {% for tag in project.tags %}
-            <span class="px-2 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800">{{ tag }}</span>
-          {% endfor %}
-        </div>
-      </div>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-
-      <hr class="border-zinc-200 dark:border-zinc-800" />
-
-      <!-- BLOG -->
-
-
-
-
-<section id="blog" class="py-12">
-  <div class="mb-6 flex items-end justify-between">
-    <div>
-      <h2 class="text-2xl font-bold">Blog</h2>
-      <p class="text-zinc-600 dark:text-zinc-400">Pensieri veloci, appunti e guide brevi.</p>
-    </div>
-    <a href="/blog/" class="text-sm underline underline-offset-4">Vedi tutti</a>
-  </div>
-
-  <div class="grid gap-5 md:grid-cols-3">
-    {% for post in site.posts limit:3 %}
-      <article class="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
-        <h3 class="text-lg font-semibold">
-          <a href="{{ post.url }}">{{ post.title }}</a>
-        </h3>
-        <div class="text-xs text-zinc-500">
-          {{ post.date | date: "%d/%m/%Y" }}
-        </div>
-        <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-          {{ post.excerpt }}
-        </p>
-        <a href="{{ post.url }}" class="mt-4 block w-full rounded-xl bg-zinc-100 px-3 py-2 text-sm text-center hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700">
-          Leggi
+<!doctype html>
+<html lang="it" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Jonez Site</title>
+    <meta name="description" content="Portfolio + Blog tutto-in-uno per un* 17enne curioso/a di tech e design" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
+            boxShadow: { soft: '0 10px 30px rgba(0,0,0,0.08)' }
+          }
+        }
+      }
+  
+    </script>
+    <!-- Chart.js per grafico competenze -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <style>
+      /* animazioni leggere */
+      .fade-in { animation: fade-in .6s ease both; }
+      @keyframes fade-in { from { opacity:0; transform: translateY(6px);} to{opacity:1; transform: none;} }
+    </style>
+  </head>
+  <body class="bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-zinc-200 dark:bg-zinc-900/70 dark:border-zinc-800">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+        <a href="#home" class="flex items-center gap-2">
+          <img src="https://gabrieljones.it/assets/logo.png" alt="Logo" class="inline-flex h-9 w-9 rounded-2xl" />
+          <span class="font-semibold" id="brandName">Jonez Site</span>
         </a>
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
-
-
-
-      <hr class="border-zinc-200 dark:border-zinc-800" />
-
-      <!-- COMPETENZE -->
-<section id="skills" class="py-12">
-  <h2 class="text-2xl font-bold mb-1">Competenze</h2>
-  <p class="mb-6 text-zinc-600 dark:text-zinc-400">
-    Una fotografia onesta di dove sono oggi e cosa voglio migliorare.
-  </p>
-  <div class="grid gap-6 md:grid-cols-2 items-start">
-    <div class="rounded-2xl border border-zinc-200 p-5 dark:border-zinc-800">
-      <canvas id="skillsChart" class="w-full h-64"></canvas>
-    </div>
-    <div class="grid gap-3">
-      {% for skill in site.data.skills %}
-        <div class="flex items-center justify-between rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
-          <span class="text-sm">{{ skill.name }}</span>
-          <span class="text-sm text-zinc-500">{{ skill.score }}/100</span>
+        <nav class="hidden md:flex items-center gap-1 text-sm">
+          <a href="/#home" class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800">Home</a>
+          <a href="/aree-tematiche/" class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800">Sezioni</a>
+          <a href="/#projects" class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800">Progetti</a>
+          <a href="/#blog" class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800">Blog</a>
+          <a href="/#skills" class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800">Competenze</a>
+          <a href="/#timeline" class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800">Percorso</a>
+          <a href="/#contact" class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800">Contatti</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" class="p-2 rounded-xl border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" aria-label="Tema">🌗</button>
+          <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" aria-label="Menu">☰</button>
         </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-      <hr class="border-zinc-200 dark:border-zinc-800" />
-
-      <!-- TIMELINE -->
-<section id="timeline" class="py-12">
-  <h2 class="text-2xl font-bold mb-1">Percorso</h2>
-  <p class="mb-6 text-zinc-600 dark:text-zinc-400">Le tappe principali finora.</p>
-  <div class="relative ml-3 border-l border-zinc-200 pl-6 dark:border-zinc-800">
-    {% for step in site.data.timeline %}
-      <div class="relative mb-8">
-        <span class="absolute -left-[23px] top-1 inline-flex h-4 w-4 rounded-full border-2 border-zinc-900 bg-white dark:border-zinc-100 dark:bg-zinc-900"></span>
-        <h3 class="font-semibold">{{ step.year }} — {{ step.title }}</h3>
-        <p class="text-sm text-zinc-600 dark:text-zinc-400">{{ step.description }}</p>
       </div>
-    {% endfor %}
-  </div>
-  <div class="mt-6 rounded-2xl border border-zinc-200 p-5 dark:border-zinc-800">
-    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-      Obiettivo prossimo: università. Se vuoi collaborare su un progetto, scrivimi!
-    </p>
-  </div>
-</section>
-
-      <hr class="border-zinc-200 dark:border-zinc-800" />
-
-      <!-- CONTATTI -->
-      <section id="contact" class="py-12">
-        <h2 class="text-2xl font-bold mb-1">Contatti</h2>
-        <p class="mb-6 text-zinc-600 dark:text-zinc-400">Scrivimi per collaborazioni, domande o feedback.</p>
-        <div class="grid gap-6 md:grid-cols-2">
-            <form name="contatti" method="POST" data-netlify="true" class="rounded-2xl p-5 grid gap-3">
-              <input required name="nome" placeholder="Il tuo nome" />
-              <input required type="email" name="email" placeholder="La tua email" />
-              <textarea required name="messaggio" rows="5" placeholder="Messaggio"></textarea>
-              <button type="submit">Invia</button>
-            </form>
-          <div class="rounded-2xl border border-zinc-200 p-5 grid gap-4 dark:border-zinc-800">
-            <a class="flex items-center justify-between rounded-xl border border-zinc-200 p-3 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" href="https://github.com/username" target="_blank">GitHub <span>🔗</span></a>
-            <a class="flex items-center justify-between rounded-xl border border-zinc-200 p-3 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" href="https://linkedin.com/in/username" target="_blank">LinkedIn <span>🔗</span></a>
-            <a class="flex items-center justify-between rounded-xl border border-zinc-200 p-3 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" href="https://instagram.com/username" target="_blank">Instagram <span>🔗</span></a>
-          </div>
+      <!-- mobile sheet -->
+      <div id="mobileMenu" class="hidden md:hidden border-t border-zinc-200 dark:border-zinc-800">
+        <div class="mx-auto max-w-6xl px-4 py-2 grid gap-1">
+          <a class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800" href="#home">Home</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800" href="#projects">Progetti</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800" href="#blog">Blog</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800" href="#skills">Competenze</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800" href="#timeline">Percorso</a>
+          <a class="px-3 py-2 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-800" href="#contact">Contatti</a>
         </div>
-      </section>
+      </div>
+    </header>
+
+    <main class="mx-auto max-w-6xl px-4">
+    {{ content }}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-14 border-t border-zinc-200 py-10 dark:border-zinc-800">
+      <div class="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-zinc-600 dark:text-zinc-400">© <span id="year"></span> <span id="footerName">Jonez Site - By Gabriel Jones</span>. Fatto con ❤️ e curiosità.</p>
+        <div class="flex items-center gap-3 text-sm">
+          <a href="#home" class="underline underline-offset-4">Torna su</a>
+          <span class="inline-flex items-center gap-2 rounded-xl border border-zinc-200 px-3 py-1 text-xs text-zinc-600 dark:text-zinc-400 dark:border-zinc-700">☀️ Light | 🌙 Dark</span>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // ====== CONFIG RAPIDA: modifica qui per personalizzare ======
+      const PROFILE = {
+        name: 'Gabriel Jones',
+        email: 'gabriel.jones@18f.it',
+        location: 'Italia',
+        socials: {
+          github: 'https://github.com/gabrielmatteojones',
+          linkedin: 'https://linkedin.com/in/gabrielmatteojones',
+          instagram: 'https://instagram.com/gabrielmatteojones_official'
+        },
+        cvUrl: '#'
+      };
+
+      // ====== Dark mode persistente ======
+      const root = document.documentElement;
+      const userPref = localStorage.getItem('theme');
+      if (userPref === 'dark' || (!userPref && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        root.classList.add('dark');
+      }
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        root.classList.toggle('dark');
+        localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+      });
+
+      // ====== Mobile menu ======
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+      // ====== Popola nome/footer + CV ======
+      document.getElementById('brandName').textContent = PROFILE.name;
+      document.getElementById('footerName').textContent = PROFILE.name;
+      document.getElementById('year').textContent = new Date().getFullYear();
+      document.querySelectorAll('a[href="#"]').forEach(a => { if (a.textContent.includes('CV')) a.href = PROFILE.cvUrl; });
+      // Social links
+      document.querySelectorAll('a[aria-label="GitHub"], a[href*="github.com/username"]').forEach(a=>a.href=PROFILE.socials.github);
+      document.querySelectorAll('a[aria-label="LinkedIn"], a[href*="linkedin.com/in/username"]').forEach(a=>a.href=PROFILE.socials.linkedin);
+      document.querySelectorAll('a[aria-label="Instagram"], a[href*="instagram.com/username"]').forEach(a=>a.href=PROFILE.socials.instagram);
+      document.querySelectorAll('form[action^="mailto:"]').forEach(f=>f.action=`mailto:${PROFILE.email}`);
+      document.querySelectorAll('a[href^="mailto:"]').forEach(a=>a.href=`mailto:${PROFILE.email}`);
+
+      // ====== Ricerca progetti ======
+      const input = document.getElementById('searchInput');
+      const cards = Array.from(document.querySelectorAll('.project'));
+      input.addEventListener('input', () => {
+        const q = input.value.toLowerCase();
+        cards.forEach(c => {
+          const title = c.getAttribute('data-title').toLowerCase();
+          const tags = c.getAttribute('data-tags').toLowerCase();
+          c.style.display = (title.includes(q) || tags.includes(q)) ? '' : 'none';
+        });
+      });
+
+      // ====== Blog dialog ======
+      const posts = {
+        p1: { title: 'Perché ho iniziato a programmare a 17 anni', html: `<p>La mia storia in breve: curiosità, errori e prime vittorie. Qui puoi scrivere l\'articolo completo, anche in <strong>Markdown</strong> convertito in HTML.</p>` },
+        p2: { title: '5 tool gratis che uso ogni giorno', html: `<ul><li>VS Code</li><li>Notion</li><li>Figma</li><li>Raycast/Alfred</li><li>Obsidian</li></ul>` },
+        p3: { title: 'Imparare React senza annoiarsi', html: `<p>Mini-progetti, esercizi pratici e clonazioni leggere: il modo migliore per fissare i concetti.</p>` }
+      };
+      const dialog = document.getElementById('postDialog');
+      const postTitle = document.getElementById('postTitle');
+      const postContent = document.getElementById('postContent');
+      document.querySelectorAll('[data-post]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const p = posts[btn.dataset.post];
+          postTitle.textContent = p.title;
+          postContent.innerHTML = p.html + postContent.innerHTML.match(/<pre[\s\S]*/)[0];
+          dialog.showModal();
+        });
+      });
+      document.getElementById('closeDialog').addEventListener('click', () => dialog.close());
+
+      // ====== Chart.js Radar per competenze ======
+      const ctx = document.getElementById('skillsChart');
+      const data = {
+        labels: ['HTML/CSS','JavaScript','React','Python','UI/UX'],
+        datasets: [{ label: 'Livello', data: [100,90,80,75,80], fill: true }]
+      };
+      new Chart(ctx, { type: 'radar', data, options: { scales: { r: { suggestedMin: 0, suggestedMax: 100 } }, plugins: { legend: { display: false } } } });
+    </script>
+  </body>
+</html>
