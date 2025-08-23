@@ -38,3 +38,64 @@ collections:
         widget: "list"
         required: false
         hint: "Inserisci gli slug delle persone (es: mario-rossi, lucia-bianchi)"
+  # Gestione skills
+  - name: "skills"
+    label: "Skills"
+    editor:
+      preview: false
+    files:
+      - file: "_data/skills.yml"
+        label: "Competenze"
+        name: "skills"
+        fields:
+          - label: "Lista competenze"
+            name: "skills"
+            widget: list
+            fields:
+              - { label: "Nome", name: "title", widget: string }
+              - { label: "Livello", name: "level", widget: string }
+              - { label: "Categoria", name: "category", widget: string }
+
+  # Gestione timeline
+  - name: "timeline"
+    label: "Timeline"
+    editor:
+      preview: false
+    files:
+      - file: "_data/timeline.yml"
+        label: "Percorso"
+        name: "timeline"
+        fields:
+          - label: "Tappe"
+            name: "stages"
+            widget: list
+            fields:
+              - { label: "Anno", name: "year", widget: string }
+              - { label: "Titolo", name: "title", widget: string }
+              - { label: "Descrizione", name: "description", widget: text }
+
+  # Gestione progetti (già definita prima, ma qui compatta)
+  - name: "projects"
+    label: "Progetti"
+    editor:
+      preview: false
+    files:
+      - file: "_data/projects.yml"
+        label: "Progetti"
+        name: "projects"
+        fields:
+          - label: "Lista progetti"
+            name: "projects"
+            widget: list
+            fields:
+              - { label: "Titolo", name: "title", widget: string }
+              - { label: "Descrizione", name: "description", widget: text }
+              - { label: "Immagine", name: "image", widget: string }
+              - { label: "In evidenza", name: "featured", widget: boolean, default: false }
+              - label: "Link"
+                name: "links"
+                widget: list
+                fields:
+                  - { label: "Etichetta", name: "label", widget: string }
+                  - { label: "URL", name: "url", widget: string }
+              - { label: "Tag", name: "tags", widget: list }
