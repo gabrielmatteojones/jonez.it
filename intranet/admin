@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: "base"
+
+media_folder: "assets/netlify"
+public_folder: "/assets/netlify/"
+
+collections:
+  - name: "pagine"
+    label: "Pagine"
+    folder: "it"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { name: "title", label: "Titolo", widget: "string" }
+      - { name: "date", label: "Data", widget: "datetime", default: "", hidden: true }
+      - { name: "permalink", label: "Link personalizzato", widget: "string", required: true }
+      - { name: "body", label: "page", widget: "markdown" }
+  - name: "posts"
+    label: "Post"
+    label_singular: "Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "posts/{{slug}}"
+    sortable_fields: ['date', 'title']
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
+      - { label: "Categoria", name: "categories", widget: "list", default: ["notizie"] }
+      - { label: "Tag", name: "tags", widget: "list" }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+      - { label: "Autore", name: "autore", widget: "string", default: "Redazione: Gabriel Matteo Jones" }
+      - label: "Persone correlate"
+        name: "persone_correlate"
+        widget: "list"
+        required: false
+        hint: "Inserisci gli slug delle persone (es: mario-rossi, lucia-bianchi)"
