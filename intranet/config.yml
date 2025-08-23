@@ -31,13 +31,9 @@ collections:
       - { label: "Data", name: "date", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ" }
       - { label: "Categoria", name: "categories", widget: "list", default: ["notizie"] }
       - { label: "Tag", name: "tags", widget: "list" }
+      - { label: "Immagine", name: "image", widget: "image", required: false }
       - { label: "Contenuto", name: "body", widget: "markdown" }
       - { label: "Autore", name: "autore", widget: "string", default: "Redazione: Gabriel Matteo Jones" }
-      - label: "Persone correlate"
-        name: "persone_correlate"
-        widget: "list"
-        required: false
-        hint: "Inserisci gli slug delle persone (es: mario-rossi, lucia-bianchi)"
   # Gestione skills
   - name: "skills"
     label: "Skills"
