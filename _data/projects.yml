@@ -1,0 +1,26 @@
+- title: "Arena Giovani"
+  featured: true
+  description: "Giovani senza frontiere; Non istituzionale, giovane."
+  image: "https://www.repstatic.it/content/nazionale/img/2020/01/11/103222083-147a0238-2497-49ea-ba86-5d57e707e7f3.jpg?q=80&w=1200&auto=format&fit=crop"
+  links:
+    - label: "Scheda"
+      url: "/schede/progetto/AGFO/"
+    - label: "Sito"
+      url: "https://agfo.fvg.it"
+  tags: ["Giovani", "Politica", "Organi"]
+
+- title: "UPID"
+  description: "Cultura aperta: nessun confine culturale"
+  image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1200&auto=format&fit=crop"
+  links:
+    - label: "Scheda"
+      url: "/scheda/progetto/upid/"
+  tags: ["Biblioteca", "Cultura", "Organi"]
+
+- title: "Bibliotecando"
+  description: "*Progetto interno a UPID"
+  image: "https://www.bookandthecity.it/wp-content/uploads/2021/01/stoc.jpg"
+  links:
+    - label: "Scheda"
+      url: "/scheda/progetto/bibliotecando/"
+  tags: []
