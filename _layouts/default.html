@@ -7,7 +7,48 @@
     <meta name="description" content="Portfolio + Blog tutto-in-uno per un* 17enne curioso/a di tech e design" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+<script>
+async function setupSearch() {
+  const response = await fetch('/search.json');
+  const data = await response.json();
+  const input = document.getElementById('search-box');
+  const results = document.getElementById('results');
 
+  input.addEventListener('input', () => {
+    const query = input.value.toLowerCase();
+    results.innerHTML = '';
+    if (query.length < 2) {
+      results.style.display = 'none';
+      return;
+    }
+
+    const matches = data.filter(item =>
+      item.title.toLowerCase().includes(query) ||
+      item.content.toLowerCase().includes(query)
+    );
+
+    if (matches.length === 0) {
+      results.style.display = 'none';
+      return;
+    }
+
+    results.style.display = 'block';
+    matches.slice(0, 8).forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
+      results.appendChild(li);
+    });
+  });
+
+  // Chiudi risultati cliccando fuori
+  document.addEventListener('click', (e) => {
+    if (!document.querySelector('.search-container').contains(e.target)) {
+      results.style.display = 'none';
+    }
+  });
+}
+setupSearch();
+</script>
 
     <style>
 .search-container {
@@ -69,6 +110,7 @@
 }
     </style>
     <script>
+      
       tailwind.config = {
         darkMode: 'class',
         theme: {
@@ -78,6 +120,7 @@
           }
         }
       }
+  
     </script>
     <!-- Chart.js per grafico competenze -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
@@ -107,6 +150,10 @@
         </nav>
         <div class="flex items-center gap-2">
           <button id="themeToggle" class="p-2 rounded-xl border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" aria-label="Tema">🌗</button>
+          <div class="search-container">
+            <input type="text" id="search-box" placeholder="🔍 Cerca..." autocomplete="off">
+            <ul id="results"></ul>
+          </div>
           <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" aria-label="Menu">☰</button>
         </div>
       </div>
