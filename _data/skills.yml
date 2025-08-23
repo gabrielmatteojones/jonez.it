@@ -1,0 +1,10 @@
+- name: HTML/CSS
+  score: 100
+- name: JavaScript
+  score: 90
+- name: PHP
+  score: 80
+- name: Python
+  score: 75
+- name: React
+  score: 80
