@@ -34,6 +34,8 @@ baseurl: "/"
 
 permalink: /:title/
 
+global: nonez.jonez.it
+
 # The release of Jekyll Now that you're using
 version: v4.0.0
 
@@ -54,5 +56,3 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
-
-global: nonez.jonez.it
