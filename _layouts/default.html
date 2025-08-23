@@ -7,108 +7,6 @@
     <meta name="description" content="Portfolio + Blog tutto-in-uno per un* 17enne curioso/a di tech e design" />
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-<script>
-async function setupSearch() {
-  const response = await fetch('/search.json');
-  const data = await response.json();
-  const input = document.getElementById('search-box');
-  const results = document.getElementById('results');
-
-  input.addEventListener('input', () => {
-    const query = input.value.toLowerCase();
-    results.innerHTML = '';
-    if (query.length < 2) {
-      results.style.display = 'none';
-      return;
-    }
-
-    const matches = data.filter(item =>
-      item.title.toLowerCase().includes(query) ||
-      item.content.toLowerCase().includes(query)
-    );
-
-    if (matches.length === 0) {
-      results.style.display = 'none';
-      return;
-    }
-
-    results.style.display = 'block';
-    matches.slice(0, 8).forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="${item.url}">${item.title}</a>`;
-      results.appendChild(li);
-    });
-  });
-
-  // Chiudi risultati cliccando fuori
-  document.addEventListener('click', (e) => {
-    if (!document.querySelector('.search-container').contains(e.target)) {
-      results.style.display = 'none';
-    }
-  });
-}
-setupSearch();
-</script>
-
-    <style>
-.search-container {
-  position: relative;
-  max-width: 400px;
-  margin: 1rem auto;
-}
-
-#search-box {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-}
-
-#search-box:focus {
-  outline: none;
-  border-color: #007acc;
-  box-shadow: 0 0 5px rgba(0,122,204,0.4);
-}
-
-#results {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  right: 0;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 0.5rem;
-  max-height: 250px;
-  overflow-y: auto;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none;
-  z-index: 10;
-}
-
-#results li {
-  padding: 0.7rem 1rem;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-#results li:last-child {
-  border-bottom: none;
-}
-
-#results li a {
-  text-decoration: none;
-  color: #333;
-  display: block;
-}
-
-#results li:hover {
-  background: #f9f9f9;
-}
-    </style>
     <script>
       
       tailwind.config = {
@@ -150,10 +48,6 @@ setupSearch();
         </nav>
         <div class="flex items-center gap-2">
           <button id="themeToggle" class="p-2 rounded-xl border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" aria-label="Tema">🌗</button>
-          <div class="search-container">
-            <input type="text" id="search-box" placeholder="🔍 Cerca..." autocomplete="off">
-            <ul id="results"></ul>
-          </div>
           <button id="menuBtn" class="md:hidden p-2 rounded-xl border border-zinc-200 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800" aria-label="Menu">☰</button>
         </div>
       </div>
