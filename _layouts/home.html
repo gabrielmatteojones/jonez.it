@@ -92,53 +92,31 @@ layout: default
 
       <hr class="border-zinc-200 dark:border-zinc-800" />
 
-      <!-- BLOG -->
-      <section id="blog" class="py-12">
-        <div class="mb-6 flex items-end justify-between">
-          <div>
-            <h2 class="text-2xl font-bold">Blog</h2>
-            <p class="text-zinc-600 dark:text-zinc-400">Pensieri veloci, appunti e guide brevi.</p>
-          </div>
-          <a href="#" class="text-sm underline underline-offset-4">Vedi tutti</a>
-        </div>
-        <div class="grid gap-5 md:grid-cols-3">
-          <!-- Post 1 -->
-          <article class="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
-            <h3 class="text-lg font-semibold">Perché ho iniziato a programmare a 17 anni</h3>
-            <div class="text-xs text-zinc-500">15/06/2025</div>
-            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Dai videogiochi alla voglia di costruire software utile…</p>
-            <button data-post="p1" class="mt-4 w-full rounded-xl bg-zinc-100 px-3 py-2 text-sm hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700">Leggi</button>
-          </article>
-          <!-- Post 2 -->
-          <article class="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
-            <h3 class="text-lg font-semibold">5 tool gratis che uso ogni giorno</h3>
-            <div class="text-xs text-zinc-500">29/05/2025</div>
-            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Dalla gestione note alla produttività: una lista breve…</p>
-            <button data-post="p2" class="mt-4 w-full rounded-xl bg-zinc-100 px-3 py-2 text-sm hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700">Leggi</button>
-          </article>
-          <!-- Post 3 -->
-          <article class="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
-            <h3 class="text-lg font-semibold">Imparare React senza annoiarsi</h3>
-            <div class="text-xs text-zinc-500">12/04/2025</div>
-            <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">Mini-progetti e trucchi per capire i concetti chiave.</p>
-            <button data-post="p3" class="mt-4 w-full rounded-xl bg-zinc-100 px-3 py-2 text-sm hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700">Leggi</button>
-          </article>
-        </div>
+<!-- BLOG -->
+<section id="blog" class="py-12">
+  <div class="mb-6 flex items-end justify-between">
+    <div>
+      <h2 class="text-2xl font-bold">Blog</h2>
+      <p class="text-zinc-600 dark:text-zinc-400">Pensieri veloci, appunti e guide brevi.</p>
+    </div>
+    <a href="{{ site.baseurl }}/blog" class="text-sm underline underline-offset-4">Vedi tutti</a>
+  </div>
 
-        <!-- Dialog per lettura post -->
-        <dialog id="postDialog" class="rounded-2xl max-w-2xl w-[95%] p-0 overflow-hidden bg-white dark:bg-zinc-900 text-inherit">
-          <header class="flex items-center justify-between px-5 py-3 border-b border-zinc-200 dark:border-zinc-800">
-            <h4 id="postTitle" class="font-semibold">Titolo</h4>
-            <button id="closeDialog" class="text-sm px-2 py-1 rounded-lg bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700">Chiudi</button>
-          </header>
-          <article id="postContent" class="p-5 prose prose-zinc max-w-none dark:prose-invert">
-            <p>Contenuto…</p>
-            <pre><code>// esempio di snippet
-const hello = 'ciao';
-console.log(hello);</code></pre>
-          </article>
-        </dialog>
-      </section>
+  <div class="grid gap-5 md:grid-cols-3">
+    {% for post in site.posts limit:3 %}
+    <article class="rounded-2xl border border-zinc-200 p-4 dark:border-zinc-800">
+      <h3 class="text-lg font-semibold">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
+      <div class="text-xs text-zinc-500">{{ post.date | date: "%d/%m/%Y" }}</div>
+      <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+        {{ post.excerpt | strip_html | truncate: 50 }}
+      </p>
+      <a href="{{ post.url | relative_url }}" class="mt-4 block w-full text-center rounded-xl bg-zinc-100 px-3 py-2 text-sm hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700">Leggi</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
 
       <hr class="border-zinc-200 dark:border-zinc-800" />
 
