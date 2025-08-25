@@ -27,3 +27,6 @@ Il nostro obiettivo è semplice: fare le cose bene, con trasparenza e passione, 
 ## Organi Progettuali
 
 [AGFO - Organo d'amministrazione amministrativa](https://agfo.fvg.it/organi/amministrazione/)
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

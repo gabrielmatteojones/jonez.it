@@ -9,3 +9,6 @@ permalink: /amministrazione/documenti/
 Qui trovi tutti i documenti tenuti in evidenza dall'ufficio digitale di Gabriel Matteo Jones, per consultare tutti i documenti, andare in ["Trasparenza Gabriel Jones"](https://gabrieljones.it/tag/)
 
 [](https://gabrieljones.it/tag/)[](https://gabrieljones.it/tag/)
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

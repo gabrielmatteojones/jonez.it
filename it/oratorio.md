@@ -18,3 +18,6 @@ Tuttavia, un oratorio non vive grazie a una sola persona, ma grazie alla **forza
 Il nostro impegno sarà duplice: da una parte garantire un’organizzazione efficiente e ben strutturata, dall’altra mantenere vivo lo spirito di accoglienza e di famiglia che rende unico il nostro oratorio. Vogliamo costruire un ambiente in cui i bambini possano crescere, i giovani possano mettersi in gioco, e gli adulti possano trovare uno spazio di servizio e di condivisione.
 
 Questo è l’anno in cui vogliamo fare un salto di qualità, non per il gusto di cambiare, ma per dare il meglio a chi ci affida il proprio tempo, il proprio entusiasmo e, nel caso dei più piccoli, la propria fiducia. Lavoreremo insieme, con passione e creatività, per far sì che ogni incontro, ogni gioco, ogni progetto, sia un’esperienza che resti nel cuore.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

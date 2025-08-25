@@ -43,3 +43,6 @@ Accento Civico è un progetto dinamico, in continua evoluzione.\
 Vuole essere una **cerniera tra istituzioni e cittadini**, tra idee e azioni concrete.\
 Ogni attività, ogni documento, ogni iniziativa ha un unico filo conduttore:\
 **rimettere al centro la cittadinanza come voce, azione e cambiamento**.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

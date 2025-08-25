@@ -65,3 +65,6 @@ Le preferenze possono essere modificate in qualsiasi momento tramite il link **‚
 
 La presente Politica sui Cookie pu√≤ essere modificata in qualsiasi momento.
 Le modifiche entreranno in vigore dalla data di pubblicazione sul sito.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

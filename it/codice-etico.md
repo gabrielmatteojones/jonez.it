@@ -56,3 +56,6 @@ Il Titolare si riserva di adottare provvedimenti in caso di violazioni, fino all
 ## 8. Aggiornamenti
 
 Il presente Codice Etico può essere aggiornato e modificato dal Titolare. La versione aggiornata sarà pubblicata sul sito web ufficiale.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

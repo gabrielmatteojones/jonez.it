@@ -28,3 +28,6 @@ Questo strumento si inserisce in un percorso più ampio, che punta a costruire u
 ### Collegamenti
 
 Link: http://ufficiogabrieljones.it/trasparenza/portale1/
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

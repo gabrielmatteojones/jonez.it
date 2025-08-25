@@ -8,3 +8,6 @@ persone_correlate:
   - gabriel-jones
 ---
 Ultime Comunicazioni
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

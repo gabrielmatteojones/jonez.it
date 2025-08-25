@@ -6,3 +6,6 @@ permalink: /avvisi/calendario/
 categories: "[trasparenza]"
 ---
 Calendario non disponibile, contattare la compagnia appaltante o l'amministratore di DataWin
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

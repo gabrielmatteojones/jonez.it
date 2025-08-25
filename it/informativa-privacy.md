@@ -94,3 +94,6 @@ Il sito non è destinato a minori di 14 anni e non raccoglie intenzionalmente da
 ## 11. Modifiche
 
 La presente informativa può essere aggiornata in qualsiasi momento. L’utente è invitato a consultarla periodicamente.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

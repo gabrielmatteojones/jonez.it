@@ -34,3 +34,6 @@ Per eventuali richieste o segnalazioni relative al sito web, i membri di AGFO po
 
 Note:
 Si invita tutti i membri di AGFO a fare riferimento a GJWS per ogni necessità legata al sito web e alla pubblicazione dei contenuti. Qualsiasi altro tipo di modifica o richiesta tecnica dovrà essere discussa e approvata tramite il responsabile di gestione.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

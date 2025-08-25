@@ -27,3 +27,6 @@ Le aree attualmente attive sono:
 
 * **Area Amministrativa Gestionale**
   Destinata alla gestione delle pratiche amministrative interne, al monitoraggio delle attività e all’organizzazione operativa dell’ufficio.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

@@ -6,3 +6,6 @@ permalink: /sedi/
 categories: "[luoghi]"
 ---
 Tutte le sedi GMJ
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

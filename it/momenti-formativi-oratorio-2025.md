@@ -6,3 +6,6 @@ permalink: /fi25/mf25/
 categories: "[area1]"
 ---
 Momenti Formativi Oratorio 2025
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

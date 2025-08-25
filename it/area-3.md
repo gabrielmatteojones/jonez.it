@@ -20,3 +20,6 @@ Qui si uniscono competenze tecniche e visione progettuale per offrire soluzioni 
 L’obiettivo di quest’area è mettere la tecnologia al servizio delle persone, semplificando l’accesso alle informazioni e favorendo la collaborazione tra cittadini, associazioni e istituzioni.
 
 > Nelle **pagine private** di questa sezione sono disponibili documenti tecnici, prototipi e note di sviluppo, riservati all’uso interno.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

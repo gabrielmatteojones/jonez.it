@@ -20,3 +20,6 @@ La parte dedicata alla biblioteconomia si concentra su ricerca, metodologie e bu
 Vengono seguiti progetti di innovazione dei servizi bibliotecari, promozione della lettura e diffusione della cultura, sia in presenza sia attraverso strumenti digitali.
 
 > Nelle **pagine private** di questa sezione sono disponibili appunti, materiali di lavoro e note operative, riservati all’uso interno.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

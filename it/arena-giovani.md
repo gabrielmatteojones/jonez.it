@@ -42,3 +42,6 @@ Per diventare presidente di progetto, è necessario inviare un'email all'ufficio
 * Commissione soci
 
 È necessario aver almeno il 50,1% dei voti per esser in forma ufficiale il presidente a partire dal gennaio dello stesso anno.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

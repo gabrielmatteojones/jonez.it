@@ -59,3 +59,6 @@ Il Titolare si riserva il diritto di modificare in qualsiasi momento i presenti 
 ## 10. Legge applicabile e foro competente
 
 I presenti Termini sono regolati dalla legge italiana. Per qualsiasi controversia sarà competente in via esclusiva il Foro di residenza del Titolare.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

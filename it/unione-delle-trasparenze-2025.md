@@ -17,3 +17,6 @@ permalink: /amministrazione/ut/
 ## [](/amministrazione/ut/assunzioni/)Fondi manutenzioni
 
 [Documenti](/amministrazione/ut/fm/)[](<>)
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

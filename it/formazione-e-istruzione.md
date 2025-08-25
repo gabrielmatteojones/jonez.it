@@ -17,3 +17,6 @@ Questa pagina raccoglie tutti gli articoli, le pagine e i materiali legati alle 
 Qui troverai proposte di laboratori creativi, momenti di lettura animata, attività educative e tanto altro, tutti pensati per stimolare curiosità, creatività e crescita in un ambiente accogliente e sicuro.
 
 Questa raccolta vuole essere un supporto concreto e una fonte di ispirazione per chi, come te, si dedica con passione all’educazione e al divertimento dei bambini.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

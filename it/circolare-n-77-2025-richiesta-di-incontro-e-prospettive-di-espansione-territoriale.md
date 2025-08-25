@@ -26,3 +26,6 @@ Si comunica, inoltre, che il Sig. Gabriel Matteo Jones ha espresso l’intenzion
 Budoia, Caneva, Sacile, Roveredo in Piano, San Quirino, Fontanafredda (in forma esterna), Porcia, Cordenons e Fiume Veneto.
 
 Il Consiglio rimane in attesa di ulteriori sviluppi e successive comunicazioni ufficiali in merito all’esito dell’incontro.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

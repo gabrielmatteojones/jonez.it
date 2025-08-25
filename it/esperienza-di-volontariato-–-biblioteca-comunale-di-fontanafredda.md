@@ -47,3 +47,6 @@ L’esperienza di volontariato alla Biblioteca Comunale di Fontanafredda non è 
 Il contatto quotidiano con il pubblico, la gestione di attività concrete e lo studio di biblioteconomia mi hanno permesso di comprendere l’importanza del servizio bibliotecario come **luogo di incontro, apprendimento e inclusione**.
 
 Questa esperienza rimane una tappa fondamentale del mio impegno a favore della cultura e della comunità.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

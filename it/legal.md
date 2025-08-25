@@ -9,3 +9,6 @@ categoria: legal
 image: /assets/base.png
 categories: "[legal]"
 ---
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

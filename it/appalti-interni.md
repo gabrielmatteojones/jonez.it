@@ -15,3 +15,6 @@ Tale strategia prevede l’assegnazione diretta di specifiche aree di attività 
 L’obiettivo di tale assetto organizzativo è garantire un flusso di lavoro costante e integrato, fondato su un dialogo interno permanente e su un’azione sinergica, evitando procedure competitive e riducendo i tempi di attuazione.
 
 Con questa impostazione, si intende valorizzare le competenze di ogni singolo soggetto coinvolto, promuovendo una collaborazione interna stabile e orientata al conseguimento di risultati concreti e misurabili a beneficio della collettività.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

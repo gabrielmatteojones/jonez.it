@@ -14,3 +14,6 @@ persone_correlate:
 La **riapertura ufficiale** è fissata per **settembre 2025**, quando UPID approderà sulla piattaforma **online.upid.it**. Qui gli utenti troveranno **storie affascinanti, curiosità sorprendenti e contenuti interattivi** dedicati alla cultura generale in tutte le sue forme: dalla storia all’arte, dalla scienza alle tradizioni popolari, fino alle piccole grandi scoperte del nostro quotidiano.
 
 Un luogo digitale dove **imparare sarà un piacere** e ogni giorno porterà con sé qualcosa di nuovo da scoprire.
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

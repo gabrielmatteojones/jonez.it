@@ -17,3 +17,6 @@ segreteria.gjones@agfo.fvg.it
 ### Segreteria UPID
 
 upid@upid.it
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

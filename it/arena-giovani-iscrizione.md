@@ -15,3 +15,6 @@ Compila il modulo e unisciti a una rete di ragazze e ragazzi pronti a fare la di
 📣 **La tua voce conta. Il tuo contributo è importante.**
 
 ## **[Form di iscrizione](https://docs.google.com/forms/d/e/1FAIpQLSd3NVFjzBkkXxNy_KAfOGQzZpQPhf717lriwz6wQVwWFdwjWQ/viewform?usp=header)**
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

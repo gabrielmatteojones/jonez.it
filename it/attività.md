@@ -6,3 +6,6 @@ permalink: /fi25/attivita/
 categories: [educazione]
 ---
 activity
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

@@ -13,3 +13,6 @@ L'archivio di Gabriel Matteo Jones, è un portale interno, che viene utilizzato 
 #### Risorse
 
 [Link 1](http://ufficiogabrieljones.it/portale/archivio/)
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

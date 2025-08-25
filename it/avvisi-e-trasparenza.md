@@ -18,3 +18,6 @@ Tutto quello che pubblichiamo proviene da fonti dirette e verificate: vogliamo c
 Pensiamo che un cittadino informato sia un cittadino più libero e consapevole, e che una comunità connessa sia una comunità più forte.
 
 Resta aggiornato, torna a trovarci quando vuoi, e se vuoi contribuire anche tu con segnalazioni o informazioni utili… **Accento Civico è aperto alle tue idee.**
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)

@@ -29,3 +29,6 @@ Eventuali dati personali forniti tramite la piattaforma sono trattati secondo le
 
 
 🌐 Sito web: https://ufficiogabrieljones.it/
+
+
+[Amministrato da Dipartimento GJWS]({{ site.baseurl }}/dipartimenti/gjws/)
