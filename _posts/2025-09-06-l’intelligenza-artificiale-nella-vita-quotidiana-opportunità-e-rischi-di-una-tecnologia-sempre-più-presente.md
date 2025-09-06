@@ -2,7 +2,7 @@
 layout: post
 title: "L’Intelligenza Artificiale nella vita quotidiana: opportunità e rischi
   di una tecnologia sempre più presente"
-date: 2025-09-06T06:03:00.000+02:00
+date: 1904-08-08T15:30:00.000+01:00
 author: Gabriel Jones
 cattegoria: tech
 image: https://www.genetec.com/binaries/content/gallery/genetecweb/externalupload/webgraphic_putting-ai-to-work-blog-2024.png
