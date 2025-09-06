@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: amministrazione
 title: Chi siamo
 lang: it
 ref: about-us
