@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: base   # o master, dipende dal tuo repo
+
+media_folder: "static/images/uploads" # dove finiscono le immagini caricate
+public_folder: "/images/uploads"      # come saranno servite sul sito
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "posts"
+    label: "Post"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Autore", name: "author", widget: "string", default: "Gabriel Jones" }
+      - { label: "Immagine", name: "image", widget: "image", required: false }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
+
+      
+  - name: "Pagine"
+    label: "Pagine"
+    folder: "/it/"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { label: "Titolo", name: "title", widget: "string" }
+      - { label: "Data", name: "date", widget: "datetime" }
+      - { label: "Autore", name: "author", widget: "hidden", default: "Gabriel Jones" }
+      - { label: "Immagine", name: "image", widget: "image", required: false }
+      - { label: "Contenuto", name: "body", widget: "markdown" }
