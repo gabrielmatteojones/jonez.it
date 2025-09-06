@@ -2,39 +2,28 @@
 layout: default
 ---
 
-<article class="post max-w-3xl mx-auto py-12 prose dark:prose-invert">
-  {% if page.image %}
-    <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" class="w-full h-64 object-cover rounded-lg mb-6">
-  {% endif %}
+    <article class="mx-auto max-w-3xl px-4 py-12 prose prose-invert prose-img:rounded-2xl prose-headings:font-extrabold prose-a:text-blue-400">
+      {% if page.image %}
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="mb-8 w-full rounded-3xl border border-neutral-800 object-cover">
+      {% endif %}
 
-  <h1 class="text-4xl font-bold mb-2">{{ page.title }}</h1>
-  <p class="text-sm text-gray-500 mb-4">{{ page.date | date: "%d %B %Y" }}</p>
+      <!-- Titolo -->
+      <h1 class="text-4xl font-extrabold mb-6">{{ page.title }}</h1>
 
-  {% assign words = content | number_of_words %}
-  <p class="text-xs text-gray-400 mb-8">
-    {% if words < 180 %}
-      ~1 min
-    {% else %}
-      ~{{ words | divided_by: 180 }} min
-    {% endif %}
-    lettura
-  </p>
+      <!-- Autore -->
+      <div class="flex items-center gap-4 mb-10">
+          <div class="h-12 w-12 rounded-full bg-neutral-700 flex items-center justify-center text-white font-bold">
+          <img src="https://2.gravatar.com/avatar/53241b11fb23d653d6c97ab192be4c459ef4201d71bffe0b87f8c09c061c577b?size=256&d=initials" alt="{{ page.author }}" class="h-12 w-12 rounded-full border border-neutral-700 object-cover">
+          </div>
+        <div>
+          <p class="font-bold text-white">Gabriel Jones</p>
+            <p class="text-sm text-neutral-400"><a href="/authors/@gabrieljones/">@gabrieljones</a></p>
+          <p class="text-xs text-neutral-500">Pubblicato il {{ page.date | date: "%d %B %Y" }}</p>
+        </div>
+      </div>
 
-  <div class="entry mb-8">
-    {{ content }}
-  </div>
-
-  {% if page.tags %}
-  <div class="tags mb-8">
-    <strong>Tag:</strong>
-    {% for tag in page.tags %}
-      <a href="{{ '/tags/' | append: tag | relative_url }}" class="inline-block bg-gray-200 dark:bg-gray-700 rounded px-2 py-1 text-xs mr-2">{{ tag }}</a>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <div class="entry mb-8">
-    <p>Articolo gestido da <a href="https://{{ site.global }}/dipartimenti/18f/{{ page.author }}">{{ page.author }}</a></p>
-  </div>
-
-</article>
+      <!-- Contenuto -->
+      <div class="content">
+        {{ content }}
+      </div>
+    </article>

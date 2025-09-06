@@ -1,16 +1,17 @@
-# Gemfile
 
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-# Aggiungi Jekyll come dipendenza principale
-gem 'jekyll', '~> 4.0'
+ruby "3.4.1" # consigliato per Jekyll 4.4.x su Netlify
 
-# Gemme di supporto
-gem 'jekyll-feed', '~> 0.15'
-gem 'jekyll-seo-tag', '~> 2.7'
-gem 'jekyll-sitemap', '~> 1.0'
+gem "jekyll", "~> 4.4.1"
+gem "jekyll-admin", "~> 0.12.0"
+gem "jekyll-feed", "~> 0.17.0"
+gem "jekyll-seo-tag", "~> 2.8.0"
+gem "jekyll-sitemap", "~> 1.4.0"
 
-# Bundler per gestire le dipendenze
-gem 'bundler', '~> 2.0'
+# richiesto per Ruby >= 3.0
+gem "webrick", "~> 1.9"
 
-gem "jekyll-admin"
+group :jekyll_plugins do
+  gem "jekyll-sass-converter", "~> 3.1"
+end

@@ -1,12 +1,29 @@
 ---
 layout: default
 ---
+    <article class="mx-auto max-w-3xl px-4 py-12 prose prose-invert prose-img:rounded-2xl prose-headings:font-extrabold prose-a:text-blue-400">
+      {% if page.image %}
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="mb-8 w-full rounded-3xl border border-neutral-800 object-cover">
+      {% endif %}
 
-<article class="container my-4">
+      <!-- Titolo -->
+      <h1 class="text-4xl font-extrabold mb-6">{{ page.title }}</h1>
 
-  <h1>{{ page.title }}</h1>
+      <!-- Autore -->
+      <div class="flex items-center gap-4 mb-10">
+          <img src="https://2.gravatar.com/avatar/53241b11fb23d653d6c97ab192be4c459ef4201d71bffe0b87f8c09c061c577b?size=256&d=initials" alt="{{ page.author }}" class="h-12 w-12 rounded-full border border-neutral-700 object-cover">
+          <div class="h-12 w-12 rounded-full bg-neutral-700 flex items-center justify-center text-white font-bold">
+Gabriel Jones
+          </div>
+        <div>
+          <p class="font-bold text-white">Gabriel Jones</p>
+            <p class="text-sm text-neutral-400"><a href="/@gabrieljones/">@gabrieljones</a></p>
+          <p class="text-xs text-neutral-500">Pubblicato il {{ page.date | date: "%d %B %Y" }}</p>
+        </div>
+      </div>
 
-  <div class="entry">
-    {{ content }}
-  </div>
-</article>
+      <!-- Contenuto -->
+      <div class="content">
+        {{ content }}
+      </div>
+    </article>
