@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "L’Intelligenza Artificiale nella vita quotidiana: opportunità e rischi
-  di una tecnologia sempre più presente"
+title: L’Intelligenza Artificiale nella vita quotidiana
 date: 2024-08-08T15:30:00.000+01:00
 author: Gabriel Jones
 cattegoria: tech
