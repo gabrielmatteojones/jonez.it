@@ -7,6 +7,8 @@ environment: "production"
 # Flags below are optional
 #
 
+title: "Jonez"
+
 # Prevent site from being indexed by search engines
 # Leave empty to publish the website
 noindex: true
