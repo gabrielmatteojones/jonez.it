@@ -3,7 +3,7 @@ layout: post
 title: Quattro settimane
 date: 2024-07-30T00:00:00.000+02:00
 author: Gabriel Jones
-cattegoria: example
+cattegoria: kids
 image: https://www.nonfartiinfluenzare.it/media/i3eir0wq/bambini-che-giocano-su-tappeto.jpg
 ---
 Da poco si è concluso il mio primo Grest, un’avventura durata un intero mese, quattro settimane intense in cui ho avuto il compito e la fortuna di seguire da vicino tutte le classi, dalla prima elementare fino alla terza media. Mi sono occupato di fare foto, di raccontare con le immagini la quotidianità di questa esperienza e, allo stesso tempo, di vivere in prima persona la bellezza e la fatica di ogni giornata.
