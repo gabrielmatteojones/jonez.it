@@ -20,6 +20,7 @@ collections:
       - { label: "Titolo", name: "title", widget: "string" }
       - { label: "Data", name: "date", widget: "datetime" }
       - { label: "Autore", name: "author", widget: "string", default: "Gabriel Jones" }
+      - { label: "Cattegoria", name: "cattegoria", widget: "string", default: "example" }
       - { label: "Immagine", name: "image", widget: "image", required: false }
       - { label: "Contenuto", name: "body", widget: "markdown" }
 
