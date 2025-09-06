@@ -1,7 +1,6 @@
 
 source "https://rubygems.org"
 
-ruby "3.4.1" # consigliato per Jekyll 4.4.x su Netlify
 
 gem "jekyll", "~> 4.4.1"
 gem "jekyll-admin", "~> 0.12.0"
