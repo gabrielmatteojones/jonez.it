@@ -12,8 +12,8 @@ title: "Gabriel Jones"
     <img src="{{ featured.image }}" 
          alt="{{ featured.title }}" 
          loading="lazy"
-         class="h-96 w-full object-cover transition-transform group-hover:scale-105" />
-    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" aria-hidden="true"></div>
+         class="h-96 w-full object-cover transition-transform group-hover:scale-105 rounded-3xl" />
+    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent rounded-3xl" aria-hidden="true"></div>
     <div class="absolute bottom-0 z-10 p-6">
       <h1 class="text-4xl font-extrabold text-white drop-shadow-md">{{ featured.title }}</h1>
       <p class="mt-2 text-neutral-200 line-clamp-2">
@@ -23,6 +23,7 @@ title: "Gabriel Jones"
   </a>
   {% endif %}
 
+  <!-- Due post accanto -->
   <div class="grid gap-6">
     {% for post in site.posts offset:1 limit:2 %}
     <a href="{{ post.url | relative_url }}" 
@@ -30,8 +31,8 @@ title: "Gabriel Jones"
       <img src="{{ post.image }}" 
            alt="{{ post.title }}" 
            loading="lazy"
-           class="h-44 w-full object-cover transition-transform group-hover:scale-105" />
-      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" aria-hidden="true"></div>
+           class="h-44 w-full object-cover transition-transform group-hover:scale-105 rounded-3xl" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent rounded-3xl" aria-hidden="true"></div>
       <div class="absolute bottom-0 z-10 p-4">
         <h3 class="text-xl font-extrabold text-white drop-shadow">{{ post.title }}</h3>
       </div>
@@ -47,15 +48,15 @@ title: "Gabriel Jones"
   </h2>
   <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
     {% for post in site.posts offset:3 %}
-    <article class="relative overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-950 shadow-sm">
-      <a href="{{ post.url | relative_url }}" class="block">
+    <article class="flex flex-col h-full overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-950 shadow-sm">
+      <a href="{{ post.url | relative_url }}" class="flex flex-col h-full rounded-3xl overflow-hidden">
         <img src="{{ post.image }}" 
              alt="{{ post.title }}" 
              loading="lazy"
-             class="h-48 w-full object-cover" />
-        <div class="space-y-2 p-4">
+             class="h-48 w-full object-cover rounded-t-3xl" />
+        <div class="flex flex-col flex-grow space-y-2 p-4">
           <h3 class="text-lg font-extrabold text-white">{{ post.title }}</h3>
-          <p class="text-sm text-neutral-300 line-clamp-3">
+          <p class="text-sm text-neutral-300 line-clamp-3 flex-grow">
             {{ post.excerpt | truncate: 120, '...' }}
           </p>
         </div>
